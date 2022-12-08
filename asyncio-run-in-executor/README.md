@@ -1,7 +1,11 @@
 # asyncio, run in executor
 
-## findings
+## Findings
 - executing async loop blocks main execution flow
+- 1 async loop = OS thread, from `asyncio.run` documentation:
+   > This function cannot be called when another asyncio event loop is running in the same thread.
+
+   > This function always creates a new event loop and closes it at the end.
 - awaitable is run from same OS thread as loop has started
 - `loop.run_in_executor` run given awaitable in **separate thread** and as benefit,
   allows loop to execute another async task (due `run_in_executor` is awaitable)
@@ -21,5 +25,5 @@ Output:
 ```
 
 ## Reference
-https://stackoverflow.com/questions/55027940/is-run-in-executor-optimized-for-running-in-a-loop-with-coroutines
-
+- https://stackoverflow.com/questions/55027940/is-run-in-executor-optimized-for-running-in-a-loop-with-coroutines
+- https://docs.python.org/3/library/asyncio-runner.html#asyncio.run
