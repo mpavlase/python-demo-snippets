@@ -19,3 +19,7 @@ Output:
 13:26:05.438 | proc MainProcess | threadid  3164| thr MainThread | async_run_in_exec: waking up
 13:26:05.438 | proc MainProcess | threadid  3164| thr MainThread | main - end
 ```
+
+## Reference
+https://stackoverflow.com/questions/55027940/is-run-in-executor-optimized-for-running-in-a-loop-with-coroutines
+
