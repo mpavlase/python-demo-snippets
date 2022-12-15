@@ -1,5 +1,9 @@
 # `__getattr__` vs `__getattribute__`
 
+**__getattr__** - is called for **non-existing** attribute access\
+**__getattribute__** - is called for **existing** attribute access
+ 
+
 ```python
 class A:
     name = 'name of class A'
